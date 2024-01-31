@@ -24,7 +24,7 @@ resource "aws_lambda_function" "lambda" {
 }
 
 resource "aws_cloudwatch_log_group" "log" {
-  name              = "/aws/lambda/${var.function_name}"
+  name              = "${var.lambda_cw_prefix}-${var.function_name}"
   retention_in_days = var.log_retention_days
 }
 

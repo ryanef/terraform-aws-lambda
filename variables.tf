@@ -13,6 +13,11 @@ variable "function_name" {
   default = "confirm_signup"
 }
 
+variable "lambda_cw_prefix" {
+  default = "tf"
+  type = string
+}
+
 variable "lambda_log_policy_name" {
   default = "lambdalogpolicy"
   type    = string
