@@ -3,6 +3,13 @@ variable "archive_type" {
   type    = string
 }
 
+variable "environment_variables" {
+  type = map(string)
+  default = {
+    "Name" = "tester"
+    "Environment" = "dev"
+  }
+}
 variable "filename" {
   type    = string
   default = "confirm_signup.zip"

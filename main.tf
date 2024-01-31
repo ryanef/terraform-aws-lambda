@@ -7,7 +7,7 @@ data "archive_file" "lambda" {
 
 
 resource "aws_lambda_function" "lambda" {
-
+  
   filename         = var.output_path
   function_name    = var.function_name
   role             = aws_iam_role.lambda_role.arn
@@ -16,10 +16,7 @@ resource "aws_lambda_function" "lambda" {
   runtime          = var.lambda_runtime
 
   environment {
-    variables = {
-      Name        = var.lambda_tag_name
-      Environment = var.lambda_environment
-    }
+    variables = var.environment_variables
   }
 }
 
